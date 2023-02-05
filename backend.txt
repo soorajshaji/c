@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    int n,i;
+    char a[100][100],str[20],sym[20];
+    printf("enter the number of process:");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++){
+        scanf("%s",&a[i]);
+    }
+
+    for(i=0;i<n;i++){
+        strcpy(str,a[i]);
+        if(str[3] == '+'){
+            strcpy(sym,"ADD");
+        }
+        else if(str[3] == '-'){
+            strcpy(sym,"SUB");
+        }
+        else if(str[3] == '*'){
+            strcpy(sym,"MUL");
+        }
+        printf("\n MOV \t %c \t R %d",str[2],i);
+        printf("\n %s \t %c \t R %d",sym,str[4],i);
+        printf("\n MOV \t R %d \t %c",i,str[0]);
+    }
+}

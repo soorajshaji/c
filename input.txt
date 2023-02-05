@@ -1,0 +1,6 @@
+void main(){
+
+    int x = 55 / 5; //comment
+    printf(x);
+
+}
